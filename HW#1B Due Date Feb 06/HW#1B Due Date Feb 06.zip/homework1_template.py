@@ -24,10 +24,11 @@ def problem2(A, B, C):
     :return: The result of AB - C
     """
     # Compute the matrix multiplication AB
-    AB = ...
+    AB = np.dot(A, B)
     
+    ABC = AB - C
     # Compute and return the final result
-    return ...
+    return ABC
 
 # Testing the function with an example
 x = np.array([[1, 2, 1], [0, -1, 5]])
@@ -38,6 +39,7 @@ print(problem2_result)
 
 print('=' * 80)
 
+print("Problem 3")
 def problem3(A, B, C):
     """
     Compute the element-wise (Hadamard) product of A and B, and add the transpose of C.
@@ -48,10 +50,10 @@ def problem3(A, B, C):
     :return: The result of (A ⊙ B) + C^T
     """
     # Compute the Hadamard product
-    hadamard_product = ...
+    hadamard_product = A * B
     
     # Compute the transpose of C
-    C_transpose = ...
+    C_transpose = np.transpose(C)
     
     # Compute and return the final result
     return hadamard_product + C_transpose
@@ -74,8 +76,11 @@ def problem4(A):
     :param A: A numpy matrix
     :return: A zero matrix with the same dimensions as A
     """
+
+    shape = (A.shape[0], A.shape[1])  # tuple of dimensions
+
     # Create and return the zero matrix
-    return ...
+    return np.zeros(shape)
 
 # Testing the function with an example
 A4 = np.array([[1, 2, 1], [0, -1, 5]])
@@ -116,7 +121,7 @@ def problem6(A, i):
     :return: Sum of the entries in the ith row of A
     """
     # Compute and return the sum of the ith row
-    return ...
+    return np.sum(A[i])
 
 # Testing the function with an example
 A6 = np.array([[1, 2, 5], [-1, 5, 0]])
@@ -138,11 +143,11 @@ def problem7(A, c, d):
     :return: Arithmetic mean of the entries of A that lie between c and d
     """
     # Find the indices of elements that are between c and d (inclusive)
-    indices = ...
-    
+    indices = np.nonzero(A)
+
     # Extract the elements from A that lie in the specified range
-    elements_in_range = ...
-    
+    elements_in_range = np.mean(indices[c:d])
+
     # Compute and return the mean of these elements
     return ...
 
