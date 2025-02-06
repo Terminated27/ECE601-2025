@@ -203,23 +203,23 @@ print('=' * 80)
 print("Problem 9")
 import pandas as pd
 
-from google.colab import drive
-drive.mount('/content/drive')
+#from google.colab import drive
+#drive.mount('/content/drive')
 
 def problem9(filepath):
     # Read the CSV file into a pandas DataFrame
-    ...
+    DataFrame = pd.read_csv("HW#1B Due Date Feb 06/HW#1B Due Date Feb 06/Lec1_50_Startups.csv")
     
     # Print the shape of the DataFrame
-    ...
+    print(DataFrame.shape)
     
     # Print the first column. 
-    ...
+    print(DataFrame.iloc[:, 0])
     
     # Print the first row. 
-    ...
+    print(DataFrame.iloc[0])
 
 # Example usage:
 # Please use the CSV file uploaded on Canvas, namely 'Lec1_50_Startups.csv.' You can find it in the Lectures module.
 # Please replace 'path_to_your_file' with the actual path of the dataset on your Google Drive.
-problem9('path_to_your_file.csv')
+problem9("HW#1B Due Data Feb 06/HW#1B Due Date Feb 06/Lec1_50_Startups.csv")
