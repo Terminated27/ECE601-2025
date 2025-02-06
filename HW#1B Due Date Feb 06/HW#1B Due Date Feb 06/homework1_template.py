@@ -143,13 +143,13 @@ def problem7(A, c, d):
     :return: Arithmetic mean of the entries of A that lie between c and d
     """
     # Find the indices of elements that are between c and d (inclusive)
-    indices = np.nonzero(A)
+    indices = np.nonzero((A >= c) & (A <= d))
 
     # Extract the elements from A that lie in the specified range
-    elements_in_range = np.mean(indices[c:d])
+    # redundant
 
     # Compute and return the mean of these elements
-    return ...
+    return np.mean(A[indices])
 
 # Testing the function with an example
 A7 = np.array([[1, 2, 5], [-1, 5, 0], [4, 5, 9]])
@@ -172,19 +172,18 @@ def problem8(x, k, m, s):
     :return: An n x k matrix, each column of which is a sample from the distribution
     """
 	# Determine the dimension of column vector
-    n = ...
+    n = x.shape[0]
     
     # Generate n-dimensional column vector with all ones
-    z = ...
+    z = np.ones((n,1))
     
     # Calculate mean for the distribution
-    mean = ...
-    
+    mean = x + m * z
     # Create covariance matrix, sI, where I is the identity matrix
-    cov = ...
+    # cov = s * np.eye(n) <-- Not needed but its there
     
     # Generate k samples from the multivariate normal distribution
-    samples = ...
+    samples = mean + np.sqrt(s) * np.random.randn(n, k)
     
     return samples
 
