@@ -46,7 +46,7 @@ def gradient_descent(starting_theta, learning_rate, iterations):
     for _ in range(iterations):
         grad = gradient(theta)
         theta -= learning_rate * grad
-    print(f"Theta = {theta}, Cost = {myfunc(grad)}")
+    print(f"Theta = {theta}, Cost = {myfunc(theta)}")
     print("Optimizing Complete")
     return theta
 
@@ -67,7 +67,7 @@ starting_theta = 5.9
 x = gradient_descent(starting_theta, learning_rate, iterations)
 print(f"Local Minimum 2 at ({x}, {myfunc(x)})")
 
-# --------------------- Part C -------------------------
+# --------------------- Part D -------------------------
 # If I am understanding the question correctly, it is asking
 # how do we know which side of the local max the GD algorithm
 # will choose based on just the initial values. To answer that
