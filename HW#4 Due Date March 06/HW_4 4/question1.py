@@ -1,3 +1,10 @@
+
+# output of file: Output: [0.49313988]
+
+
+
+
+
 import numpy as np
 
 def sigmoid(z):
